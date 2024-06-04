@@ -1,0 +1,414 @@
+@font-face {
+    font-family: montserrat;
+    src: url(Montserrat-Black.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: white;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+*::selection{
+    background-color: white;
+    color:#95C11e;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95C11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-bg{
+    height: 500px;
+    width: 500px;
+    background-color: #96c11e50;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+}
+#nav{
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px 150px;
+    gap: 50px;
+    position: fixed;
+    align-items: center;
+    z-index: 99;
+}
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+video{
+    height: 100;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.455);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 3px #95C11e;
+    z-index:-1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 17px;
+    font-weight: 500;
+    width: 40%;
+    
+}
+#page1 #arrow{
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid #95C11e;
+    left: -1%;
+    bottom: 0%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+#page1 #arrow i {
+    font-size: 50px;
+    font-weight: 100;
+} 
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color: #95C11e;
+}
+#page2{
+    height:100%;
+    width: 100%;
+    z-index: 10;
+    
+}
+#scroller{
+    white-space: nowrap;
+    overflow: x auto;
+    overflow: y hidden;
+    position: relative;
+    z-index: 10;
+}
+
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 70s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke:2px #95C11e;
+    margin-right: 10px;
+    transition: all  linear 0.5s;
+}
+#scroller h4:hover{
+    color: #95C11e;
+    
+}
+
+@keyframes scroll {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+#about-us{
+    height: 40vh;
+    width: 100%;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+#about-us img{
+    height: 220px;
+    width: 250px;
+    border-radius:20px;
+    object-fit: cover;
+}
+#about-us-in{
+    width: 50%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+#about-us-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+#cards-container{
+    
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 80%;
+    width: 21%;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+#card1{
+    background-image: url(card1.webp);
+}
+#card2{
+    background-image: url(card2.webp);
+}
+#card3{
+    background-image: url(card3.avif);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11e;
+    padding: 30px;
+    padding-top: 100px;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+.overlay h4{
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px
+}
+.overlay p{
+    color: black;
+    font-size: 18px;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#green-bar{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, green, #95C11e);
+    position: relative;
+    z-index: 10;
+    
+}
+#green-bar h4{
+    width: 45%;
+    line-height: 50px;
+    font-size: 27px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+}
+#green-bar img{
+    height: 100%;
+    object-fit: cover;
+    width: 16%;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p{
+    font-size: 30px;
+    font-weight: 700;
+    width: 50%;
+    line-height: 45px;
+    text-align: center;
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+#page3 #quote-left{
+    left: 15%;
+    top: 20%;
+}
+#page3 #quote-right{
+    bottom: 20%;
+    right: 15%;
+}
+#page4{
+    height: 30vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 70px;
+}
+.ele{
+    height: 70%;
+    width: 26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.ele h2{
+    height:100%;
+    width: 100%;
+    background-color: #95C11e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+    font-weight: 800;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+.ele img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.5s;
+}
+.ele h2:hover{
+    color: white;
+    background-color: transparent;
+}
+.ele:hover img{
+   scale: 1;
+}
+#page4 h1{
+    font-size: 86px;
+    top: -20%;
+    font-weight: 900;
+    position: absolute;
+    -webkit-text-stroke: 2px white;
+    color: black;
+}
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, green, #95C11e 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    padding: 0 100px;
+}
+#footer>img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+#f1 img{
+    height: 100px;
+}
+#f1,#f2,#f3,#f4{
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+}
+#f2 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+#f3 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    color: black;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+#f4 h4{
+    font-size: 18px;
+    white-space: nowrap;
+    color: black;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+
